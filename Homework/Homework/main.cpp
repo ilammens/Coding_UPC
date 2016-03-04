@@ -1,3 +1,5 @@
+//a constant method is the one that doesn't modify the class's properties
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <cmath>
@@ -18,7 +20,7 @@ void set_0(point *p)
 	p->y = 0;
 }
 
-bool is_zero(point p)
+bool is_zero(point p) //constant method
 {
 	return p.x == 0 && p.y == 0;
 }
@@ -47,7 +49,7 @@ void product(point *p, int x, int y)
 	p->y *= y;
 }
 
-bool not_equal(point p)
+bool not_equal(point p) //constant method
 {
 	return p.x != 0 && p.y != 0;
 }
@@ -70,9 +72,11 @@ int main()
 {
 	point p;
 	point q;
+	point o;
 
-	q.x = 3;
-	q.y = 3;
+	q.x = q.y = 3;
+	o.x = o.y = 10;
+
 
 	float dist = 0;
 
@@ -86,5 +90,8 @@ int main()
 	bool ans2 = not_equal(p);
 	set_point(&p, &q);
 	dist = distance(&p, &q);
+
+	char* const p = NULL;
+
 
 }
