@@ -68,6 +68,13 @@ float distance(point *p, point *q)
 	return sqrt(((x)*(x)) + ((y)*(y)));
 }
 
+void swap(int& a, int& b)
+{
+	int c = a;
+	a = b;
+	b = c;
+}
+
 int main()
 {
 	point p;
@@ -91,7 +98,10 @@ int main()
 	set_point(&p, &q);
 	dist = distance(&p, &q);
 
-	char* const p = NULL;
+	int a, b;
+	swap(a, b);
+
+	char* const t = NULL;
 
 
 }
